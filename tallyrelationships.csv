@@ -1,0 +1,24 @@
+Transaction Table,Relationship Type,Related Table,Linking Field(s) / Mechanism,Description
+trn_voucher,Parent-Child,"trn_accounting, trn_inventory, trn_employee, trn_attendance, etc.",collection: Voucher,This is the primary transaction table. All other transaction tables are derived from it.
+,Link to Master,mst_vouchertype,voucher_type field links to mst_vouchertype.name,"Identifies the type of voucher (e.g., Sales, Purchase, Journal)."
+,Link to Master,mst_ledger,party_name field links to mst_ledger.name,Specifies the primary party ledger for the transaction.
+trn_accounting,Parent-Child,"trn_cost_centre, trn_bill, trn_bank, trn_cost_category_centre, etc.",collection: Voucher.AllLedgerEntries,Represents an accounting entry (debit/credit) within a voucher. It acts as a parent to more detailed allocations.
+,Link to Master,mst_ledger,ledger field links to mst_ledger.name,Specifies the ledger account affected by this accounting entry.
+trn_inventory,Parent-Child,trn_batch,collection: Voucher.AllInventoryEntries,Represents an inventory movement (inward/outward) within a voucher.
+,Link to Master,mst_stock_item,item field links to mst_stock_item.name,Specifies the stock item involved in the inventory entry.
+,Link to Master,mst_godown,godown field links to mst_godown.name,Specifies the location (godown) for the inventory movement.
+trn_batch,Parent-Child,(None),collection: Voucher.AllInventoryEntries.BatchAllocations,"A child of trn_inventory, it details the batch-wise allocation for a stock item."
+,Link to Master,mst_stock_item,item field links to mst_stock_item.name,The stock item to which the batch belongs.
+,Link to Master,mst_godown,godown field links to mst_godown.name,The location where the batch is stored.
+trn_cost_centre,Parent-Child,(None),collection: Voucher.AllLedgerEntries.CostCentreAllocations,"A child of trn_accounting, it allocates an amount to a specific cost centre."
+,Link to Master,mst_cost_centre,costcentre field links to mst_cost_centre.name,Specifies the cost centre receiving the allocation.
+trn_bill,Parent-Child,(None),collection: Voucher.AllLedgerEntries.BillAllocations,"A child of trn_accounting, it provides bill-wise reference details for an amount."
+,Link to Master,mst_ledger,ledger field links to mst_ledger.name,The ledger for which bill-wise details are being recorded.
+trn_employee,Parent-Child,trn_payhead,collection: Voucher.CategoryEntry.EmployeeEntry,Represents an entry in a payroll or attendance voucher for a specific employee.
+,Link to Master,mst_employee,employee_name field links to mst_employee.name,Specifies the employee involved in the transaction.
+trn_payhead,Parent-Child,(None),collection: Voucher.CategoryEntry.EmployeeEntry.PayheadAllocations,"A child of trn_employee, it breaks down the employee's salary into different pay heads."
+,Link to Master,mst_employee,employee_name field links to mst_employee.name,The employee associated with the pay head allocation.
+,Link to Master,mst_payhead,payhead_name field links to mst_payhead.name,"Specifies the salary component (e.g., Basic, HRA)."
+trn_attendance,Parent-Child,(None),collection: Voucher.AttendanceEntries,Records attendance data for an employee within an attendance voucher.
+,Link to Master,mst_employee,employee_name field links to mst_employee.name,The employee whose attendance is being recorded.
+,Link to Master,mst_attendance_type,attendancetype_name field links to mst_attendance_type.name,"The type of attendance (e.g., Present, Absent, Overtime)."

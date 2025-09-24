@@ -1,0 +1,47 @@
+transaction:
+    - name: trn_voucher
+      collection: Voucher
+      nature: Primary
+      fetch:
+        - Narration,PartyLedgerName,PlaceOfSupply,Reference,ReferenceDate
+      filters: []
+      fields:
+        - name: guid
+          field: Guid
+          type: text
+        - name: date
+          field: Date
+          type: date
+        - name: voucher_type
+          field: VoucherTypeName
+          type: text
+        - name: voucher_number
+          field: VoucherNumber
+          type: text
+        - name: reference_number
+          field: Reference
+          type: text
+        - name: reference_date
+          field: ReferenceDate
+          type: date
+        - name: narration
+          field: Narration
+          type: text
+        - name: party_name
+          field: PartyLedgerName
+          type: text
+        - name: place_of_supply
+          field: PlaceOfSupply
+          type: text
+        - name: is_invoice
+          field: IsInvoice
+          type: logical
+        - name: is_accounting_voucher
+          field: IsAccountingVch
+          type: logical
+        - name: is_inventory_voucher
+          field: IsInventoryVch
+          type: logical
+        - name: is_order_voucher
+          field: IsOrderVch
+          type: logical

@@ -1,0 +1,8 @@
+Source Table,Foreign Key Field,Target Table,Target Key Field
+mst_group,parent,mst_group,name
+mst_vouchertype,parent,mst_vouchertype,name
+mst_godown,parent,mst_godown,name
+mst_stock_category,parent,mst_stock_category,name
+mst_stock_group,parent,mst_stock_group,name
+mst_cost_centre,parent,mst_cost_centre,name
+mst_attendance_type,parent,mst_attendance_type,name

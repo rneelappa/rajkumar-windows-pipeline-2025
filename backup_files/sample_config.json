@@ -1,0 +1,36 @@
+{
+  "container_xpath": ".//VOUCHER",
+  "fields": {
+    "voucher_type": {
+      "xpath": "VOUCHERTYPE",
+      "type": "text",
+      "default": ""
+    },
+    "date": {
+      "xpath": "DATE",
+      "type": "text",
+      "default": ""
+    },
+    "amount": {
+      "xpath": "AMOUNT",
+      "type": "text",
+      "default": "0"
+    },
+    "party_name": {
+      "xpath": "PARTYNAME",
+      "type": "text",
+      "default": ""
+    },
+    "narration": {
+      "xpath": "NARRATION",
+      "type": "text",
+      "default": ""
+    },
+    "voucher_number": {
+      "xpath": "VOUCHERNUMBER",
+      "type": "text",
+      "default": ""
+    }
+  },
+  "include_attributes": true
+}

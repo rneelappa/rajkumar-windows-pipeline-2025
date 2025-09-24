@@ -1,0 +1,59 @@
+{
+  "description": "Configuration for flat XML parsing with VOUCHER_AMOUNT as record delimiter",
+  "parser_type": "flat_xml",
+  "record_delimiter": "VOUCHER_AMOUNT",
+  "field_mapping": {
+    "voucher_amount": "VOUCHER_AMOUNT",
+    "voucher_date": "VOUCHER_DATE", 
+    "voucher_id": "VOUCHER_ID",
+    "voucher_narration": "VOUCHER_NARRATION",
+    "voucher_party_name": "VOUCHER_PARTY_NAME",
+    "voucher_reference": "VOUCHER_REFERENCE",
+    "voucher_number": "VOUCHER_VOUCHER_NUMBER",
+    "voucher_type": "VOUCHER_VOUCHER_TYPE",
+    "transaction_inventory_amount": "TRN_INVENTORYENTRIES_AMOUNT",
+    "transaction_inventory_id": "TRN_INVENTORYENTRIES_ID",
+    "transaction_inventory_quantity": "TRN_INVENTORYENTRIES_QUANTITY",
+    "transaction_inventory_rate": "TRN_INVENTORYENTRIES_RATE",
+    "transaction_inventory_stockitem": "TRN_INVENTORYENTRIES_STOCKITEM_NAME",
+    "transaction_ledger_amount": "TRN_LEDGERENTRIES_AMOUNT",
+    "transaction_ledger_id": "TRN_LEDGERENTRIES_ID",
+    "transaction_ledger_is_debit": "TRN_LEDGERENTRIES_IS_DEBIT",
+    "transaction_ledger_name": "TRN_LEDGERENTRIES_LEDGER_NAME",
+    "accounting_ledger_name": "TRN_INVENTORYENTRIES_ACCOUNTINGLEDGER_NAME",
+    "accounting_ledger_amount": "TRN_INVENTORYENTRIES_ACCOUNTINGLEDGER_AMOUNT",
+    "accounting_ledger_is_positive": "TRN_INVENTORYENTRIES_ACCOUNTINGLEDGER_ISDEEMEDPOSITIVE"
+  },
+  "output_options": {
+    "include_record_number": true,
+    "exclude_empty_fields": false,
+    "field_order": [
+      "record_number",
+      "voucher_amount",
+      "voucher_date",
+      "voucher_id",
+      "voucher_narration",
+      "voucher_party_name",
+      "voucher_reference",
+      "voucher_number",
+      "voucher_type",
+      "transaction_inventory_amount",
+      "transaction_inventory_id",
+      "transaction_inventory_quantity",
+      "transaction_inventory_rate",
+      "transaction_inventory_stockitem",
+      "transaction_ledger_amount",
+      "transaction_ledger_id",
+      "transaction_ledger_is_debit",
+      "transaction_ledger_name",
+      "accounting_ledger_name",
+      "accounting_ledger_amount",
+      "accounting_ledger_is_positive"
+    ]
+  },
+  "data_cleaning": {
+    "remove_empty_tags": true,
+    "trim_whitespace": true,
+    "normalize_amounts": false
+  }
+}

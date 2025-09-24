@@ -1,0 +1,22 @@
+# XML to CSV Parser Requirements
+# Core dependencies for XML parsing and CSV generation
+
+# Standard library modules used (no external dependencies required):
+# - xml.etree.ElementTree (built-in)
+# - csv (built-in)
+# - os (built-in)
+# - argparse (built-in)
+# - json (built-in)
+# - pathlib (built-in)
+# - typing (built-in)
+
+# Optional dependencies for enhanced functionality:
+pandas>=1.5.0          # For advanced data manipulation and analysis
+lxml>=4.9.0            # For faster XML parsing (alternative to ElementTree)
+openpyxl>=3.0.0        # For Excel output support
+xlsxwriter>=3.0.0      # For advanced Excel formatting
+
+# Development dependencies (optional):
+pytest>=7.0.0          # For running tests
+black>=22.0.0           # For code formatting
+flake8>=5.0.0           # For code linting
