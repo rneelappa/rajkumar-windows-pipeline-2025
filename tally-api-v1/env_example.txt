@@ -1,0 +1,14 @@
+# Supabase Database Configuration
+SUPABASE_DB_HOST=aws-0-ap-southeast-1.pooler.supabase.com
+SUPABASE_DB_PORT=5432
+SUPABASE_DB_NAME=postgres
+SUPABASE_DB_USER=postgres.ppfwlhfehwelinfprviw
+SUPABASE_DB_PASSWORD=your_password_here
+
+# Company Configuration
+COMPANY_ID=bc90d453-0c64-4f6f-8bbe-dca32aba40d1
+DIVISION_ID=b38bfb72-3dd7-4aa5-b970-71b919d5ded4
+
+# API Configuration
+SUPABASE_API_URL=https://ppfwlhfehwelinfprviw.supabase.co/functions/v1
+SUPABASE_API_KEY=your_api_key_here
